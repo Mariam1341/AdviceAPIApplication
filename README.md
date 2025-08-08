@@ -21,9 +21,3 @@ A Spring Boot application demonstrating JWT authentication, H2 database, and pag
 - Lombok
 - MapStruct (optional)
 - Swagger/OpenAPI
-
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/advice-api.git
