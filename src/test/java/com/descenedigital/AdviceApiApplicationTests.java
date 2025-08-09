@@ -1,13 +1,27 @@
 package com.descenedigital;
 
+import com.descenedigital.model.Advice;
+import com.descenedigital.repo.AdviceRepo;
+import com.descenedigital.service.AdviceService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.*;
+import java.util.*;
 
-@SpringBootTest
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+
 class AdviceApiApplicationTests {
+		@Mock
+		private AdviceRepo adviceRepository;
 
-	@Test
-	void contextLoads() {
-	}
+		@InjectMocks
+		private AdviceService adviceService;
 
+		@BeforeEach
+		void setUp() {
+			MockitoAnnotations.openMocks(this);
+		}
 }
+
