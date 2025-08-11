@@ -6,7 +6,7 @@ Welcome! This task is designed to evaluate your skills in Java Spring Boot devel
 
 ## 📦 Project Overview
 
-The existing application includes:
+The application should include:
 
 - JWT-based authentication
 - Role-based authorization (`ADMIN`, `USER`)
