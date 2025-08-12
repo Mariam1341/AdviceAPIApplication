@@ -112,6 +112,31 @@ This project is an enhanced Advice API built with Java Spring Boot, designed to 
 - Accessible at: `http://localhost:8080/swagger-ui.html`
 - Includes detailed endpoint summaries, request and response models, and example payloads.
 
+- User Register
+![3](https://github.com/user-attachments/assets/b0b38d02-27d8-47a3-a6b1-3fa88190e725)
+
+- User Login
+![5](https://github.com/user-attachments/assets/e06e49a3-2946-4f95-9328-3945bf1babc9)
+
+- Admin Login
+![4](https://github.com/user-attachments/assets/ee11966b-541d-4820-b1c2-e88d223c3149)
+
+- Create Advice (Admin Only Feature)
+![t](https://github.com/user-attachments/assets/1d925a5f-073b-49db-89c7-2684637237c2)
+
+- Update Advice (Admin Only Feature)
+![update](https://github.com/user-attachments/assets/0fedd3a3-b6e2-4073-85ae-b64ae5dafd10)
+
+- Delete Advice (Admin Only Feature)
+![delete](https://github.com/user-attachments/assets/7041d877-152b-408d-8a8a-de5d1abd4352)
+
+- view Advice 
+![get](https://github.com/user-attachments/assets/e5d32b1f-cde7-4476-a7e5-8449095c240e)
+
+-view all Advices
+![getall](https://github.com/user-attachments/assets/000bc7d0-3f60-4ed8-8993-9a1e5b657115)
+
+
 ---
 
 ## 💡 Design & Implementation Highlights
