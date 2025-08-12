@@ -51,6 +51,7 @@ public class AdviceController {
             @ApiResponse(responseCode = "400", description = "Invalid input data")
     })
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<AdviceResponse> createAdvice(@Valid @RequestBody AdviceRequest request) {
         AdviceResponse response = adviceService.createAdvice(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -62,6 +63,7 @@ public class AdviceController {
             @ApiResponse(responseCode = "404", description = "Advice not found")
     })
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<AdviceResponse> updateAdvice(@PathVariable Long id, @Valid @RequestBody AdviceRequest request) {
         AdviceResponse response = adviceService.updateAdvice(id, request);
         return ResponseEntity.ok(response);

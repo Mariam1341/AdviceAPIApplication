@@ -19,7 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
+//For demonstration purposes, I have implemented two unit/integration tests to illustrate the testing approach
 @ExtendWith(MockitoExtension.class)
 public class ServiceLayerTests {
 
