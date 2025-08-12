@@ -1,70 +1,136 @@
-# 🧪 Java Developer Hiring Task: Advice API Enhancement
+# Advice API Enhancement
 
-Welcome! This task is designed to evaluate your skills in Java Spring Boot development, API design, and secure application architecture. You’ll be working with a basic Advice API application and extending it based on your own technical judgment.
-
----
-
-## 📦 Project Overview
-
-The application should include:
-
-- JWT-based authentication
-- Role-based authorization (`ADMIN`, `USER`)
-- CRUD operations for an `Advice` entity
-- Paginated API responses
-- H2 in-memory database
-- Swagger/OpenAPI documentation
+## 📌 Overview
+This project is an enhanced Advice API built with Java Spring Boot, designed to provide secure, role-based access to advice entries with full CRUD functionality and scalable architecture.
 
 ---
 
-## 📝 Your Task
+## 🚀 Features Implemented
 
-Your goal is to enhance and evolve the Advice API. You are free to make architectural, design, and implementation decisions as long as they align with best practices.
+- **JWT-Based Authentication**  
+  Secure login and token-based authorization to protect API endpoints.
 
-### Suggested Areas to Explore
+- **Role-Based Authorization**  
+  Defined two roles: `ADMIN` and `USER`.  
+  - `ADMIN` can create, update, and delete advice entries.  
+  - `USER` can view advice entries.
 
-You may choose to implement one or more of the following enhancements—or propose your own:
+- **CRUD Operations for Advice Entity**  
+  Full create, read, update, and delete capabilities on advice records.
 
-- **User Registration Flow**  
-  Add a secure way for users to register and authenticate.
+- **Paginated API Responses**  
+  Efficient data retrieval using pagination to handle large datasets gracefully.
 
-- **Advice Rating System**  
-  Allow users to rate advice entries and retrieve top-rated ones.
-
-- **Advanced Pagination or Filtering**  
-  Improve the API’s usability with flexible query options.
-
-- **Role Management**  
-  Introduce role assignment or role-based access control improvements.
+- **In-Memory H2 Database**  
+  Fast and easy testing and development environment with H2.
 
 - **DTO Mapping and Validation**  
-  Use tools like MapStruct or manual mapping to separate concerns.
+  Clean separation between entity models and API payloads using MapStruct and validation annotations (e.g., `@NotBlank`).
 
-- **Testing Strategy**  
-  Add unit or integration tests to validate core logic.
+- **Exception Handling**  
+  Centralized exception management to return meaningful HTTP responses and error messages.
 
-- **Swagger Improvements**  
-  Enhance API documentation with examples and descriptions.
+- **Swagger/OpenAPI Documentation**  
+  Comprehensive, interactive API docs with endpoint descriptions, request/response schemas, and examples.
 
-Feel free to go beyond these suggestions if you have ideas that improve the application’s usability, scalability, or maintainability.
-
----
-
-## ✅ What We’re Looking For
-
-| Area                     | What We Value                                             |
-|--------------------------|-----------------------------------------------------------|
-| Code Quality             | Clean, readable, and maintainable code                   |
-| Spring Boot Proficiency  | Proper use of annotations, configuration, and structure  |
-| Security Awareness       | Secure handling of authentication and authorization      |
-| API Design               | RESTful principles, pagination, and documentation         |
-| Problem Solving          | Thoughtful decisions and creative solutions              |
-| Testing (Optional)       | Demonstrated understanding of testing practices          |
+- **Unit and Data Layer Testing**  
+  Extensive use of JUnit and Mockito to validate core business logic and repository behavior.
 
 ---
 
-## 🚀 Submission Instructions
+## 🗂 Project Structure
 
-- Please make sure to implement your enhancements.
-- Update this README.md to explain your changes and decisions.
-- Create a branch and make a pull request.
+-src/main/java/com/example/adviceapi/      
+├── config/ # Security & Swagger configuration       
+├── controller/ # REST API controllers      
+├── dto/ # Request and response DTOs    
+├── entity/ # JPA entity models     
+├── exception/ # Custom exception handlers    
+├── mapper/ # MapStruct mappers for DTO conversion    
+├── repository/ # Spring Data JPA repositories    
+├── security/ # JWT utilities and filters    
+├── service/ # Business logic implementations      
+└── AdviceApiApplication.java # Main application entry point
+
+
+
+---
+
+## 🔐 Security Details
+
+- **Authentication Flow:**  
+  Users authenticate via `/auth/login` endpoint and receive JWT tokens.  
+  Tokens are sent in the `Authorization` header for subsequent protected requests.
+
+- **Role Management:**  
+  Roles assigned during registration (`USER` by default).  
+  An `ADMIN` user is seeded at application startup for management purposes.
+
+- **Access Control:**  
+  - `ADMIN` can create, update, delete advice entries.  
+  - `USER` can only view advice entries.
+
+---
+
+## 🗂 API Endpoints Overview
+
+| Endpoint            | Method | Description                      | Access           |
+|---------------------|--------|--------------------------------|------------------|
+| `/auth/register`    | POST   | Register a new user             | Public           |
+| `/auth/login`       | POST   | Authenticate user & get JWT    | Public           |
+| `/api/advices`      | GET    | Get paginated list of advice   | USER, ADMIN      |
+| `/api/advices/{id}` | GET    | Get advice by ID               | USER, ADMIN      |
+| `/api/advices`      | POST   | Create new advice              | ADMIN only       |
+| `/api/advices/{id}` | PUT    | Update advice by ID            | ADMIN only       |
+| `/api/advices/{id}` | DELETE | Delete advice by ID            | ADMIN only       |
+
+---
+
+## 🛠 DTOs and Validation
+
+- Incoming requests are validated using standard Javax Validation annotations like `@NotBlank`.
+- MapStruct is used for mapping between entity and DTO, improving maintainability.
+- API responses are wrapped in a consistent `Response<T>` format, including success status and message.
+
+---
+
+## 🧪 Testing Strategy
+
+- **Service Layer Tests:**  
+  Validating business logic using JUnit and Mockito mocks.
+
+- **Repository Layer Tests:**  
+  Mocking data access methods to ensure expected behavior.
+
+- Tests cover successful operations and failure scenarios for robustness.
+
+---
+
+## 📖 Swagger Documentation
+
+- Integrated via Springdoc OpenAPI for live interactive API exploration.
+- Accessible at: `http://localhost:8080/swagger-ui.html`
+- Includes detailed endpoint summaries, request and response models, and example payloads.
+
+---
+
+## 💡 Design & Implementation Highlights
+
+- **JWT** chosen for stateless, scalable authentication.
+- Role checks implemented at controller method level using Spring Security annotations.
+- DTO pattern with MapStruct promotes separation of concerns and cleaner code.
+- Centralized exception handling enhances API reliability and user feedback.
+- Pagination added for improved API usability.
+- Comprehensive testing assures code quality and prevents regressions.
+- Swagger documentation enriches developer experience and integration.
+
+---
+
+## 📌 Contact
+
+For questions, clarifications, or demos, please contact:
+
+**Mariam Mohammed**  
+📧 mariam.mohammed1341@gmail.com
+
+
