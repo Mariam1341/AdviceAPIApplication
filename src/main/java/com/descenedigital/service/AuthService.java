@@ -60,7 +60,6 @@ public class AuthService {
         return Response.builder()
                 .success(true)
                 .message("User registered successfully")
-                .data(responseDto)
                 .build();
     }
 
