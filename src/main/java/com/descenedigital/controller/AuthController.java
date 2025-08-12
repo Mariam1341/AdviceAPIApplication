@@ -2,25 +2,15 @@ package com.descenedigital.controller;
 
 
 
-import com.descenedigital.model.Role;
-import com.descenedigital.model.User;
-import com.descenedigital.repo.UserRepository;
+import com.descenedigital.dto.register.RegisterRequest;
 import com.descenedigital.dto.auth.*;
 import com.descenedigital.service.AuthService;
-import org.springframework.security.core.Authentication;
-import com.descenedigital.security.CustomUserDetailsService;
-import com.descenedigital.security.JwtUtil;
 import lombok.*;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.*;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
-
-import java.util.*;
 
 @RestController
 @RequestMapping("/auth")

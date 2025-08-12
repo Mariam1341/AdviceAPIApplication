@@ -2,10 +2,7 @@ package com.descenedigital.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 @Builder
 public class Response<T> {
     private boolean success;
